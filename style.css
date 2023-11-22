@@ -224,3 +224,23 @@ a{
     letter-spacing: 0.5px;
 
 }
+.main-slider-text .category{
+    color: #969696;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.main-slider-text .category a{
+    color: #e70634;
+    margin: 0px 3px;
+}
+.rating img{
+    height: 10px;
+    width: 20px;
+    object-fit: contain;
+    object-position: center;
+}
+.rating{
+    font-size: 0.8rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
