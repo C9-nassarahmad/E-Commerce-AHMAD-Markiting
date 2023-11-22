@@ -198,28 +198,28 @@
                               </div>
 
 
-                              <div class="swiper-slide">
-                                <div class="main-slider-box">
-                                        <a href="#" class="main-slider-overlay">
-                                            <i class="fas fa-play"></i>
-                                        </a>
-                                        <div class="main-slider-img">
-                                            <img src="Images/p-5.jpg" alt="poster">
-                                        </div>
-                                        <div class="main-slider-text">
-                                            <span class="quality">Full HD</span>
-                                            <div class="bottom-text">
-                                                <div class="movie-name">
-                                                    <span>2014</span>
-                                                    <strong>paranormal activity:the marked ones</strong>
-                                                </div>
-                                                <div class="category-rating">
-                                                    <div class="category">
-                                                        <a href="#">Horror</a>
-                                                        <a href="#">Mistery</a>
-                                                        <a href="#">Thriller</a>
+        <div class="swiper-slide">
+        <div class="main-slider-box">
+            <a href="#" class="main-slider-overlay">
+            <i class="fas fa-play"></i>
+            </a>
+            <div class="main-slider-img">
+            <img src="Images/p-5.jpg" alt="poster">
+            </div>
+            <div class="main-slider-text">
+            <span class="quality">Full HD</span>
+            <div class="bottom-text">
+            <div class="movie-name">
+            <span>2014</span>
+            <strong>paranormal activity:the marked ones</strong>
+            </div>
+            <div class="category-rating">
+            <div class="category">
+                     <a href="#">Horror</a>
+                             <a href="#">Mistery</a>
+                             <a href="#">Thriller</a>
                                                         
-                                                    </div>
+                                    </div>
                                                     <div class="rating">
                                                         5.2 <img src="Images/IMDb-icon.png" alt="imbd"/>
                                                     </div>
@@ -295,7 +295,22 @@
 
     </div>
       
-      <div class="swiper-pagination"></div>
+     
+    </div>
+  </section>
+  <!-- btns -->
+  <div class="slider-btns">
+   
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <!-- slider end -->
+
+
+  <!-- last movies -->
+  <section id="lastest">
+    <div class="lastest-heading">
+        <h1>Lastest Movies</h1>
     </div>
   </section>
    
@@ -310,17 +325,26 @@
             el: ".swiper-pagination",
             clickable: true,
           },
+          autoplay:{
+            delay:5000,
+            disableOnInteraction:false,
+
+          },
+          navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
           breakpoints: {
             640: {
               slidesPerView: 2,
               spaceBetween: 20,
             },
             768: {
-              slidesPerView: 4,
+              slidesPerView: 2,
               spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 5,
+              slidesPerView: 3,
               spaceBetween: 50,
             },
           },
