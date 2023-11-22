@@ -22,6 +22,9 @@
 <link rel="stylesheet" href="css/swiper-bundle.min.css">
 </head>
 <body>
+    <div id="progress">
+        <span id="progress-value"></span>
+    </div>
     
   <nav class="navigation">
     <input type="checkbox" class="menu-btn" id="menu-btn">
@@ -746,6 +749,21 @@
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/swiper-bundle.min.js.map"></script>
     <script>
+        /////////////////////////////////////////////
+        let scrollprecentage=()=>{
+            let scrollProgress=document.getElementById("progress")
+            let progressValue=document.getElementById("progress-value");
+            let pos= document.documentElement.scrollTop;
+            let calcHeight=document.documentElement.scrollHeight=document.documentElement.calcHeight;
+            let scrollValue=Math.round(pos*100/calcHeight);
+            scrollProgress.style.background=`conic gradient(#e70634) ${scrollValue}%,#2b2f38 ${scrollValue}%)`;
+
+        }
+        window.onscroll=scrollprecentage
+        window.onload=scrollprecentage
+
+
+////////////////////////////////////////////////////////
         var swiper = new Swiper(".mySwiper", {
           slidesPerView: 1,
           spaceBetween: 10,
@@ -777,6 +795,17 @@
             },
           },
         });
+
+        // menu btn fixed when scroll
+       $(window).scroll(function () {
+        if($(document).scrollTop()>20){
+            $(`.navigation`).addClass(`fix-icon`);
+        }
+        else{
+            $(`.navigation`).removeClass(`fix-icon`);
+        }
+        
+       })
       </script>
 </body>
 </html>
