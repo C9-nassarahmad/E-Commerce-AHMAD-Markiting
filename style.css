@@ -415,7 +415,7 @@ header .content .details h5{
                  
   
               }
-            header section .cards .bi-chevron-left,.bi-chevron-right{
+            header section  .bi-chevron-left, .bi-chevron-right{
                 position: absolute;
                 top: 50%;
                 left: 3%;
@@ -431,6 +431,7 @@ header .content .details h5{
                 cursor: pointer;
                 transition: .3s linear;
                 z-index: 999999999;
+        
                 opacity: 0;
             }
 
