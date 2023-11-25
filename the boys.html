@@ -73,9 +73,9 @@
             </div>
             <div class="btns">
                 <a href="#" id="play">Watch<i class="bi bi-play-fill"></i></a>
-                <a href="#" download="the boys 480ph" id="low_q">480ph</a>
-                <a href="#" download="the boys 720ph" id="medium_q">720ph</a>
-                <a href="#"download="the boys 1080ph" id="high_q">1080</a>
+                <a href="#" download="The Boys 480ph" id="low_q">480ph</a>
+                <a href="#" download="The Boys 720ph" id="medium_q">720ph</a>
+                <a href="#"download="The Boys 1080ph" id="high_q">1080</a>
             </div>
         </div>
         <section>
@@ -106,7 +106,7 @@
         fetch(json_url).then((Response)=>Response.json())
         .then(data=>{
             let movie_array=data.filter(ele =>{
-                return ele.name==="the boys";
+                return ele.name==="The Boys";
             })
             document.getElementById('title').innerText=data[0].name;
             document.getElementsByClassName('video')[0].setAttribute('src',movie_array[0].trailer);
@@ -116,7 +116,7 @@
             document.getElementById('high_q').href=movie_array[0].high;
     document.getElementById('gen').innerText=data[0].genre;
     document.getElementById('date').innerText=data[0].date;
-    document.getElementById('rate').innerHTML=`<span>imdb</span></p><i class="bi bi-star-fill">9.6</i>${movie_array[0].imdb}`
+    document.getElementById('rate').innerHTML=`<span>IBMD</span></p><i class="bi bi-star-fill">9.6</i>${movie_array[0].imdb}`
    
         })
     </script>

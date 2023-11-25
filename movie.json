@@ -1,4 +1,5 @@
-[{
+[
+   {
     "name": "The Boys",
     "imdb": 9.3,
     "date": "2022",
@@ -7,11 +8,12 @@
     "genre": "Action",
     "type": "series",
     "url": "the boys.html",
+    
     "trailer": "john wick.webm",
     "low": "video/theboys.webm",
     "medium": "video/the boys 720ph.mp4",
     "high": "video/the boys 1080ph.mp4"
-}, {
+    }, {
     "name": "Money Heist",
     "imdb": 9.9,
     "date": "2020",

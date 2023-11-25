@@ -11,9 +11,9 @@ right_btn.addEventListener('click',()=>{
 })
 let json_url="movie.json";
 fetch(json_url).then(Response =>Response.json())
-.then((data)=>{
+.then((data)=> {
     data.array.forEach((ele,i) => {
-        let {name,imdb,date,sposter,bposter,genre,url,}=ele;
+        let {name,imdb,date,sposter,bposter,genre,url}=ele;
         let card=document.createElement('a');
         card.classList.add('card');
         card.href=url;
@@ -25,7 +25,7 @@ fetch(json_url).then(Response =>Response.json())
              <h4>${name}</h4>
              <div class="sub">
                  <p>${genre}</p>
-                 <h3><span>${imdb}</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</h3>
+                 <h3><span>IMDB</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</h3>
              </div>
          </div>
         </div>
@@ -36,10 +36,10 @@ fetch(json_url).then(Response =>Response.json())
     document.getElementById('title').innerText=data[0].name;
     document.getElementById('gen').innerText=data[0].genre;
     document.getElementById('date').innerText=data[0].date;
-    document.getElementById('rate').innerHTML=`<span>imdb</span></p><i class="bi bi-star-fill">9.6</i>${data[0].imdb}`
+    document.getElementById('rate').innerHTML=`<span>IMDB</span></p><i class="bi bi-star-fill">9.6</i>${data[0].imdb}`
     // search data load
     data.forEach(element =>{
-        let {name,imdb,date,sposter,genre,url,}=element;
+        let {name,imdb,date,sposter,genre,url}=element;
         let card=document.createElement('a');
         card.classList.add('card');
         card.href=url;
@@ -50,7 +50,7 @@ fetch(json_url).then(Response =>Response.json())
          
              <h3>${name}</h3>
             
-                 <p>${genre},${date},<span>${imdb}</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</p>
+                 <p>${genre},${date},<span>IMDB</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</p>
                  
              </div>
         `
@@ -66,7 +66,7 @@ fetch(json_url).then(Response =>Response.json())
         let b = a[index] .getElementsByClassName ('cont')[e];
         // console. Log(a.textContent)
         let TextValue = b. textContent || b.innerText;
-        if(TextValue. toUpperCase().index0f(filter) > -1) {
+        if(TextValue. toUpperCase().indexOf(filter) > -1) {
        a[index].style.display="flex";
        search.style.visibility="visible";
        search.style.opacity=1;
@@ -75,17 +75,17 @@ fetch(json_url).then(Response =>Response.json())
         }
         if(search_input.value==0){
             search.style.visibility="hidden";
-       search.style.opacity=1;
+       search.style.opacity=0;
         }
     }
 
 })
-let video=document.getElementsByClassName('video')[0];
+let video=document.getElementsByTagName('video')[0];
 let play=document.getElementById('play');
 play.addEventListener('click',()=>{
     if(video.paused){
-        video.play;
-        play.innerHTML=`play <i class="bi bi-pause-fill"></i>`
+        video.play();
+        play.innerHTML=`Play <i class="bi bi-pause-fill"></i>`
     }
     else{
         video.pause();
@@ -95,14 +95,14 @@ play.addEventListener('click',()=>{
 })
 let series=document.getElementById('series');
 let movies=document.getElementById('movies');
-series.addEventListener('click',()=>{
+series.addEventListener('click',()=> {
     cards.innerHTML='';
 
-    let search_array=data.filter(ele =>{
+    let series_array=data.filter(ele => {
         return ele.type==="series";
     })
 
-    data.array.forEach((ele,i) => {
+    series.array.forEach((ele,i) => {
         let {name,imdb,date,sposter,bposter,genre,url,}=ele;
         let card=document.createElement('a');
         card.classList.add('card');
@@ -115,7 +115,7 @@ series.addEventListener('click',()=>{
              <h4>${name}</h4>
              <div class="sub">
                  <p>${genre}</p>
-                 <h3><span>${imdb}</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</h3>
+                 <h3><span>IMDB</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</h3>
              </div>
          </div>
         </div>
