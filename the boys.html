@@ -105,9 +105,7 @@
     <script>
         fetch(json_url).then((Response)=>Response.json())
         .then(data=>{
-            let movie_array=data.filter(ele =>{
-                return ele.name==="The Boys";
-            })
+            
             document.getElementById('title').innerText=data[0].name;
             document.getElementsByClassName('video')[0].setAttribute('src',movie_array[0].trailer);
             document.getElementsByClassName('video')[0].play();
@@ -117,8 +115,10 @@
     document.getElementById('gen').innerText=data[0].genre;
     document.getElementById('date').innerText=data[0].date;
     document.getElementById('rate').innerHTML=`<span>IBMD</span></p><i class="bi bi-star-fill">9.6</i>${movie_array[0].imdb}`
-   
         })
+            
+   
+       
     </script>
 
 
