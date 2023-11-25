@@ -80,4 +80,79 @@ fetch(json_url).then(Response =>Response.json())
     }
 
 })
+let video=document.getElementsByClassName('video')[0];
+let play=document.getElementById('play');
+play.addEventListener('click',()=>{
+    if(video.paused){
+        video.play;
+        play.innerHTML=`play <i class="bi bi-pause-fill"></i>`
+    }
+    else{
+        video.pause();
+        play.innerHTML=`Watch <i class="bi bi-pause-fill"></i>`
+
+    }
+})
+let series=document.getElementById('series');
+let movies=document.getElementById('movies');
+series.addEventListener('click',()=>{
+    cards.innerHTML='';
+
+    let search_array=data.filter(ele =>{
+        return ele.type==="series";
+    })
+
+    data.array.forEach((ele,i) => {
+        let {name,imdb,date,sposter,bposter,genre,url,}=ele;
+        let card=document.createElement('a');
+        card.classList.add('card');
+        card.href=url;
+        card.innerHTML=`
+        <img src="${sposter}" alt="${name}" class="poster">
+        <div class="rest_card">
+         <img src="${bposter}" alt="">
+         <div class="cont">
+             <h4>${name}</h4>
+             <div class="sub">
+                 <p>${genre}</p>
+                 <h3><span>${imdb}</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</h3>
+             </div>
+         </div>
+        </div>
+        `
+        cards.appendChild(card);
+        
+    });
+
+})
+movies.addEventListener('click',()=>{
+    cards.innerHTML='';
+
+    let movie_array=data.filter(ele =>{
+        return ele.type==="movie";
+    })
+
+    movie_array.forEach((ele,i) => {
+        let {name,imdb,date,sposter,bposter,genre,url,}=ele;
+        let card=document.createElement('a');
+        card.classList.add('card');
+        card.href=url;
+        card.innerHTML=`
+        <img src="${sposter}" alt="${name}" class="poster">
+        <div class="rest_card">
+         <img src="${bposter}" alt="">
+         <div class="cont">
+             <h4>${name}</h4>
+             <div class="sub">
+                 <p>${genre}</p>
+                 <h3><span>${imdb}</span></p><i class="bi bi-star-fill">9.6</i>${imdb}</h3>
+             </div>
+         </div>
+        </div>
+        `
+        cards.appendChild(card);
+        
+    });
+})
+
 })
