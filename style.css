@@ -1,19 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@900&display=swap');
 *{
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
 }
 body{
     width: 100%;
     height: 100vh;
     background-color: rgb(23, 23, 23);
-    font-family: 'poppins',sans-serif;
+    
+    font-family: 'Poppins', sans-serif;
+    
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
+    
+    
 header{
+    font-family: 'Poppins', sans-serif;
+    
+    position: relative;
     width: 80%;
     height: 90%;
     
@@ -27,8 +36,8 @@ header::before{
     position: absolute;
     width:100%;
     height: 100%;
-    background-color: url('img/money heist1.jpg')no-repeat center center/cover;
-    opacity: 0.6;
+    background-color: url('img/money heist1.jpg') no-repeat center center/cover;
+    opacity: .6;
     z-index: -1;
 }
 header::after{
@@ -36,14 +45,14 @@ header::after{
     position: absolute;
     width:100%;
     height: 100%;
-    background: linear-gradient(0deg,transparent,#000);
+    background: linear-gradient(180deg,transparent,#000);
     z-index: -1;
 }
 header video{
     position: absolute;
     width: 120%;
     height: 190%;
-    top: -47;
+    top: -47%;
     z-index: -1;
 }
 header nav{
@@ -62,7 +71,7 @@ header nav .search_user .search::-webkit-scrollbar{
     border-radius: 5px;
     visibility: hidden;
 }
-header nav .search_user .search::-webkit-scrollbar{
+header nav .search_user .search::-webkit-scrollbar-thumb{
     width: 50x;
     background: rgb(255, 255, 255,.4);
     visibility: hidden;
@@ -79,14 +88,18 @@ header nav .search_user .search .card{
     
     position: relative;
     width:100%;
-    height: 50%;
+    height: 50px;
    display: flex;
    align-items: center;
-   margin-top: 5px;
+   margin-bottom: 5px;
    padding: 3px 0px;
    text-decoration: none;
    display: none;
 }
+
+
+
+/*  */
 header nav .logo_ul{
     display: flex;
     align-items: center;
@@ -145,6 +158,7 @@ header nav .search_user .search{
     right: 0;
     top: 40px;
     z-index: 99999;
+    overflow-y: auto;
 }
 
 
@@ -159,7 +173,7 @@ header nav .search_user .search .card::before{
     z-index: -1;
 }
 header nav .search_user .search .card img{
-    width: 25px;
+    width: 28px;
     height: 90px;
     border-radius: 2px;
     margin-left: 8px;
@@ -187,7 +201,7 @@ header nav .search_user .search .card .cont span{
     background: yellow;
     color: #000;
     padding: 0px 3px;
-    margin: 0px 5px;
+    margin: 0px 5px 0px 10px;
     font-weight: 500;
 }
 header .content{
@@ -217,7 +231,7 @@ font-size: 10px;
 margin-right: 10px;
 }
 header .content .details h5{
-    color: rgb(142, 230, 46,);
+    color: rgb(142, 230, 48);
     font-size: 10px;
     margin-right: 10px;
     }
@@ -287,15 +301,16 @@ header .content .details h5{
                 margin-top: 10px;
                 display: flex;
                 align-items: center;
-                overflow-x: auto;
-                scroll-behavior: smooth;
+                 overflow-x: auto;
+                scroll-behavior: smooth; 
             }
             header section .cards::-webkit-scrollbar{
                 display: none;
             }
             header section .cards .card{
+                /* width: 300px; */
                 position: relative;
-                max-width: 130px;
+                min-width: 130px;
                 height: 180px;
                 border-radius: 8px;
                 margin-right: 10px;
@@ -309,11 +324,12 @@ header .content .details h5{
                 position: relative;
             }
             header section .cards .card:hover{
+                
 
-                width: 300px;
+                min-width: 300px;
                 overflow: hidden;
             }
-            header section .cards.card .reset_card{
+            header section .cards .card .rest_card{
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -326,15 +342,15 @@ header .content .details h5{
 
 
             }
-            header section .cards .reset_card img{
-                position: absolute;
+            header section .cards .rest_card img{
+                position: relative;
                 width: 100%;
                 height: 100%;
                 border-radius: 8px;
                 z-index: -1;
 
             }
-            header section .cards .card.reset_card::after{
+            header section .cards .card .rest_card::after{
                content: '';
                position: absolute;
                width: 100%;
@@ -345,32 +361,33 @@ header .content .details h5{
                z-index: 1;
 
             }
-            header section .cards .card.reset_card .cont{
+            header section .cards .card.rest_card .cont{
                
                 position: absolute;
                 width: 100%;
-                height: 10px;
+                /* height: 10px; */
+                bottom: 10px;
                
                 left: 0;
                color: #fff;
                padding: 0px 20px;
  
              }
-             header section .cards .card.reset_card .cont .sub{
+             header section .cards .card .rest_card .cont .sub{
                display: flex;
                align-items: center;
                justify-content: space-between;
                 
  
              }
-             header section .cards .card.reset_card .cont .sub p{
+             header section .cards .card .rest_card .cont .sub p{
                 font-size: 12px;
                 font-weight: 400;
                 color: rgb(255, 255, 255,.7);
                  
   
               }
-              header section .cards .card.reset_card .cont .sub h3{
+              header section .cards .card .rest_card .cont .sub h3{
                 color: #fff;
                 font-size: 12px;
                 display: flex;
@@ -378,22 +395,22 @@ header .content .details h5{
                  
   
               }
-              header section .cards .card.reset_card .cont .sub h3 span{
+              header section .cards .card .rest_card .cont .sub h3 span{
                 background: yellow;
                 color: #000;
                 padding: 0px 3px;
-                margin: 0px 5px 0px 5px;
+                margin: 0px 5px 0px 10px;
                 font-weight: 500;
                 border-radius: 2px;
                  
   
               }
-              header section .cards .card.reset_card .cont .sub h3 i{
+              header section .cards .card.rest_card .cont .sub h3 i {
                 margin-right:3px ;
                  
   
               }
-              header section .cards .card:hover.reset_card {
+              header section .cards .card:hover.rest_card {
                 opacity: 1;
                  
   
