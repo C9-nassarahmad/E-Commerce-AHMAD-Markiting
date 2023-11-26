@@ -32,6 +32,19 @@ function addEvents(){
     cartRemove_btns.forEach((btn)=>{
         btn.addEventListener('click',handle_removeCartItem);
     });
+    // Change item quantity
+    let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
+    cartQuantity_inputs.forEach((input) => {
+    input.addEventListener("change", handle_changeItemQuantity);
+});
+// Add item to cart
+let addCart_btns = document.querySelectorAll(".add-cart");
+addCart_btns.forEach((btn) => {
+btn.addEventListener("click", handle_addCartItem);
+});
+// Buy Order
+const buy_btn = document.querySelector(".btn-buy");
+buy_btn.addEventListener("click", handle_buyOrder);
 
 };
 function handle_removeCartItem(){
