@@ -47,6 +47,70 @@ const buy_btn = document.querySelector(".btn-buy");
 buy_btn.addEventListener("click", handle_buyOrder);
 
 };
+// handle event function
+let itemsAdded = [];
+
+function handle_addCartItem() {
+let product = this.parentElement;
+let title = product.querySelector(".product-title").innerHTML;
+let price = product.querySelector(".product-price").innerHTML;
+let imgSrc = product.querySelector(".product-img").src;
+console.log(title, price, imgSrc);
+let newToAdd = {
+    title,
+    price,
+    imgSrc,
+};
+  // handle item is already exist
+    if (itemsAdded.find((el) => el.title == newToAdd.title)) {
+        alert("This Item Is Already Exist!");
+        return;
+        } else {
+    itemsAdded.push(newToAdd);
+}
+// Add product to cart
+let cartBoxElement = CartBoxComponent(title, price, imgSrc);
+let newNode = document.createElement("div");
+newNode.innerHTML = cartBoxElement;
+const cartContent = cart.querySelector(".cart-content");
+cartContent.appendChild(newNode);
+
+update();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function handle_removeCartItem(){
     this.parentElement.remove();
 }
