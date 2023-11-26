@@ -18,15 +18,37 @@ if (document.readyState == "loading") {
   start();
 }
 
-// =============== START ====================
+// =============== START  and local storage when refresh====================
 function start() {
   addEvents();
+//   loadItemsFromLocalStorage();
+//   const storedItems=localStorage.getItem('itemsAdded');
+  
+//   if(storedItems){
+//     itemsAdded=JSON.parse(storedItems);
+//     rerenderCart();
+//   }
+  
+// }
+// function rerenderCart(){
+//   const cartContent=cart.querySelector('.cart-content');
+//   cartContent.innerHTML='';
+
+//   itemsAdded.forEach(item=>{
+//     const cartBoxElement=CartBoxComponent(item.title, item.price, item.imgSrc);
+    
+//     const newNode=document.createElement('div');
+//     newNode.innerHTML=cartBoxElement;
+//     cartContent.appendChild(newNode);
+//   });
+//   updateTotal();
 }
 
 // ============= UPDATE & RERENDER ===========
 function update() {
   addEvents();
   updateTotal();
+  // loadItemsFromLocalStorage();
 }
 
 // =============== ADD EVENTS ===============
@@ -59,6 +81,7 @@ function addEvents() {
 let itemsAdded = [];
 
 function handle_addCartItem() {
+  // localStorage.setItem('itemsAdded',JSON.stringify(itemsAdded));
   let product = this.parentElement;
   let title = product.querySelector(".product-title").innerHTML;
   let price = product.querySelector(".product-price").innerHTML;
@@ -85,17 +108,20 @@ function handle_addCartItem() {
   newNode.innerHTML = cartBoxElement;
   const cartContent = cart.querySelector(".cart-content");
   cartContent.appendChild(newNode);
+  // rerenderCart();
 
   update();
 }
 
 function handle_removeCartItem() {
+  // localStorage.setItem('itemsAdded',JSON.stringify(itemsAdded));
   this.parentElement.remove();
   itemsAdded = itemsAdded.filter(
     (el) =>
       el.title !=
       this.parentElement.querySelector(".cart-product-title").innerHTML
   );
+  // rerenderCart();
 
   update();
 }
@@ -110,6 +136,7 @@ function handle_changeItemQuantity() {
 }
 
 function handle_buyOrder() {
+  // localStorage.removeItem('itemAdded');
   if (itemsAdded.length <= 0) {
     alert("There is No Order to Place Yet! \nPlease Make an Order first.");
     return;
@@ -118,6 +145,7 @@ function handle_buyOrder() {
   cartContent.innerHTML = "";
   alert("Your Order is Placed Successfully :)");
   itemsAdded = [];
+  // rerenderCart();
 
   update();
 }
@@ -156,3 +184,17 @@ function CartBoxComponent(title, price, imgSrc) {
         <i class='bx bxs-trash-alt cart-remove'></i>
     </div>`;
 }
+// Load items from local storage
+// function loadItemsFromLocalStorage() {
+//   const storedItems = localStorage.getItem('itemsAdded');
+//   if (storedItems) {
+//     itemsAdded = JSON.parse(storedItems);
+//   }
+// }
+// // Save items to local storage
+// function saveItemsToLocalStorage() {
+//   localStorage.setItem('itemsAdded', JSON.stringify(itemsAdded));
+// }
+// // update the cart and total on initial page load
+// updateTotal();
+// addEvents();
