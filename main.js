@@ -129,6 +129,7 @@ function CartBoxComponent(title,price,imgSrc){
     <i class="bx bxs-trash-alt cart-remove"></i>
     </div>`;
 }
+// this is part one dom the part two is convert to jquery and make the extra features
 
 
 
