@@ -99,6 +99,23 @@ function handle_changeItemQuantity(){
     alert("Your Order is Placed Successfully :)");
     update();
 }
+//update and rerender func
+function updateTotal(){
+    let cartBoxes=document.querySelectorAll('.cart-price');
+    const totalElement=cart.querySelector('.total-price');
+    let total=0;
+    cartBoxes.forEach((cartBox)=>{
+        let priceElement=cartBox.querySelector(".cart-price");
+        let price=parseFloat(priceElement.innerHTML.replace('$',''));
+        let quantity=cartBox.querySelector(".cart-quantity").value;
+        total+=total*quantity;
+    })
+    //keep 2 digit after decimal point
+    total=total.toFixed(2);
+    //or this is true
+    //total=Math.round(total*100)/100;
+    totalElement.innerHTML="$"+total;
+}
 
 
 
