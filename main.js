@@ -78,6 +78,28 @@ cartContent.appendChild(newNode);
 update();
 
 }
+//remove cart icon
+function handle_removeCartItem() {
+    this.parentElement.remove();
+    itemsAdded = itemsAdded.filter(
+    (el) =>
+        el.title !=
+        this.parentElement.querySelector(".cart-product-title").innerHTML
+    );
+
+    update();
+}
+function handle_changeItemQuantity(){
+    if(isNaN(this.value) || this.value<=0){
+        alert("There is No Order to Place Yet!\nPlease Make an Order First.");
+        return;
+    }
+    const cartContent=cart.querySelector(".cart-content");
+    cartContent.innerHTML="";
+    alert("Your Order is Placed Successfully :)");
+    update();
+}
+
 
 
 
