@@ -218,4 +218,40 @@ text-transform: uppercase;
     background-color: hsl(249, 32%, 17% );
 }
 /* //respnsive media */
-
+@media (max-width:1080px){
+    .nav{
+        padding: 15px;
+    }
+    .container{
+        width: 90%;
+        margin-top:0 auto ;
+    }
+    section{
+        padding: 3rem 0 2rem;
+    }
+    .shop{
+        margin-top: 2rem;
+    }
+    
+}
+/* for medium devices */
+@media (max-width:400px) {
+    .nav{
+        padding: 11px;
+    }
+    .logo{
+        font-size: 1rem;
+    }
+    .cart{
+        width: 320px;
+    }
+}
+/* small devices */
+@media (max-width:360px)and(min-width:360px) {
+    .shop{
+        margin-top: 1rem;
+    }
+    .cart{
+        width: 280px;
+    }
+}
