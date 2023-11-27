@@ -12,6 +12,7 @@
     scroll-behavior: smooth;
     scroll-padding: 2rem;
 }
+
 /* Variables  */
 :root{
     --main-color: #fd4646;
@@ -69,6 +70,7 @@ header{
     font-size: 1.8rem;
     cursor: pointer;
 }
+
 
 /* CART  */
 .cart{
@@ -258,4 +260,13 @@ header{
     .cart{
         width: 280px;
     }
+}
+.bi{
+    font-size: 150px;
+    cursor: pointer;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border:solid #4946fd;
 }
