@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ECommerce-ShoppingCart</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- box icons  -->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -14,8 +15,110 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
-    
+<body >
+    <!--  
+        <div class="container">
+        <header>Sign Up</header>
+
+        <div class="progress-bar">
+            <div class="step">
+                <div class="name">Name</div>
+                <div class="number"><span>1</span></div>
+                <i class='bx bx-check'></i>
+            </div>
+
+            <div class="step">
+                <div class="name">Contact</div>
+                <div class="number"><span>2</span></div>
+                <i class='bx bx-check'></i>
+            </div>
+
+            <div class="step">
+                <div class="name">Birth</div>
+                <div class="number"><span>3</span></div>
+                <i class='bx bx-check'></i>
+            </div>
+
+            <div class="step">
+                <div class="name">Submit</div>
+                <div class="number"><span>4</span></div>
+                <i class='bx bx-check'></i>
+            </div>
+        </div>
+
+        <div class="form-outer">
+            <form action="#">
+                <div class="slide">
+                    <div class="title">Basic Info :</div>
+                    <div class="field">
+                        <div class="label">First Name</div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Last Name</div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <button class="next">Next</button>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="title">Contact Info :</div>
+                    <div class="field">
+                        <div class="label">Email Address</div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Phone Number</div>
+                        <input type="tel">
+                    </div>
+                    <div class="field btns">
+                        <button class="prev">Previous</button>
+                        <button class="next">Next</button>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="title">Date of Birth :</div>
+                    <div class="field">
+                        <div class="label">Date</div>
+                        <input type="date">
+                    </div>
+                    <div class="field">
+                        <div class="label">Gender</div>
+                        <select>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field btns">
+                        <button class="prev">Previous</button>
+                        <button class="next">Next</button>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="title">Login Details :</div>
+                    <div class="field">
+                        <div class="label">Username</div>
+                        <input type="text">
+                    </div>
+                    <div class="field">
+                        <div class="label">Password</div>
+                        <input type="password">
+                    </div>
+                    <div class="field btns">
+                        <button class="prev">Previous</button>
+                        <button class="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>                                 -->
+   
+    <!--                                         -->
    
     <!-- HEADER  -->
     <header>
@@ -23,6 +126,10 @@
         <!-- NAV  -->
         <div class="nav container">
             <a href="#" class="logo"><span>A-</span>Markiting</a>
+            <button id="toggleButton">login</button>
+            
+            
+            
             <!-- CART ICON  -->
             <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
              <i class='bx bx-shopping-bag' id="cart-icon"></i> 
@@ -115,13 +222,73 @@
                 <span class="product-price">$110.5</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
+            <div class="product-box">
+                <img src="assets/img/product1.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product2.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product3.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product4.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product5.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product6.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product7.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
+            <div class="product-box">
+                <img src="assets/img/product8.jpg" alt="" class="product-img">
+                <h2 class="product-title">Apple Watch</h2>
+                <span class="product-price">$110.5</span>
+                <i class='bx bx-shopping-bag add-cart'></i>
+            </div>
         </div>
     </section>
     
       <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+      <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const body = document.querySelector("section");
+    
+        toggleButton.addEventListener('click', function() {
+            body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+        });
+    </script>
     
     <!-- link js  -->
     <script src="assets/js/main.js"></script>
+   
+    
+  
+ 
     
 </body>
 
