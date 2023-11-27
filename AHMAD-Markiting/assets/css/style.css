@@ -69,8 +69,8 @@ header{
 #cart-icon{
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
-    background-color: black;
+    color:var(--sec-color);
+    background-color: rgb(109, 104, 104);
     
 }
 
