@@ -106,7 +106,24 @@ $(document).ready(function(){
         <i class='bx bxs-trash-alt cart-remove'></i>
     </div>`;
   }
-  
+  const toggle=$("#toggleDark");
+  const body=$("body");
+  toggle.on("click",function(){
+    $(this).toggleClass("bi-moon");
+    if($(this).toggleClass("bi-brightness-high-fill")){
+      body.css({
+        background:"white",
+        color:"black",
+        transition:"2s"
+      })
+    }else{
+      body.css({
+        background:"black",
+        color:"white",
+        transition:"2s"
+      })
+    }
+  })
 
 
 
