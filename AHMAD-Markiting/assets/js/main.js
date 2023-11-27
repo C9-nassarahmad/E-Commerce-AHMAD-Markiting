@@ -5,13 +5,21 @@ $(document).ready(function(){
   const carttIcon=$("#cart-icon");
   const cart=$(".cart");
   const closeCart=$("#cart-close");
-})
   carttIcon.on("click",function(){
-  cart.addClass("active");
-  })
-  closeCart.on("click",function(){
-    cart.reomveClass("active");
-  });
+    cart.addClass("active");
+    })
+    closeCart.on("click",function(){
+      cart.removeClass("active");
+    });
+    // if($(this).readyState=="loading"){
+    //   $(this).on("DOMContentLoaded",start)
+    // }else{
+    //   start();
+    // }
+
+})
+ 
+  
   function start(){
     addEvents();
   }
@@ -51,7 +59,9 @@ $(document).ready(function(){
     };
     let carBoxElement=CartBoxComponent(title,price,imgSrc);
   let newNode=$("<div>").html(carBoxElement);
-  const carContent=cart.find(".cart-content");
+  
+  const cartContent=cart.find(".cart-content");
+  
   carContent.append(newNode);
   update();
     
