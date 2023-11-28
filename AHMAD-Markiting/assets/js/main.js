@@ -11,11 +11,11 @@ $(document).ready(function(){
     closeCart.on("click",function(){
       cart.removeClass("active");
     });
-    // if($(this).readyState=="loading"){
-    //   $(this).on("DOMContentLoaded",start)
-    // }else{
-    //   start();
-    // }
+     if($(this).readyState=="loading"){
+       $(this).on("DOMContentLoaded",start())
+     }else{
+       start();
+     }
 
 })
  
@@ -35,7 +35,7 @@ $(document).ready(function(){
     });
     let cartQuantity_inputs=$(".cart-quantity");
     cartQuantity_inputs.each(function(){
-      $(this).on("click",handle-CangeItemQuantity);
+      $(this).on("click",handle-ChangeItemQuantity);
 
     });
     let addCart_btns=$(".add-cart");
@@ -57,6 +57,13 @@ $(document).ready(function(){
     let newToAdd={
       title,price,imgSrc
     };
+     if (itemsAdded.find((el) => el.title == newToAdd.title)) {
+       alert("This Item Is Already Exist!");
+       return;
+     } else {
+       itemsAdded.push(newToAdd);
+     }
+  
     let carBoxElement=CartBoxComponent(title,price,imgSrc);
   let newNode=$("<div>").html(carBoxElement);
   
@@ -69,7 +76,7 @@ $(document).ready(function(){
   function handle_removeCartItem(){
     $(this).parent().remove();
     itemsAdded=itemsAdded.filter(function(el){
-      return(el.title !=$(this).parent().find(".cart-product-title").html);
+      return(el.title !=$(this).parent().find(".cart-product-title").html());
 
     })
     update();
@@ -77,31 +84,34 @@ $(document).ready(function(){
   function handle_changeItemQuantity(){
     if(isNaN($(this).val()) || $(this).val()<1){
       $(this).val(1);
-      update();
+      
     }
+    $(this).val(Math.floor($(this).val()));
   }
   function handle_buyOrder(){
     if(itemsAdded.length<=0){
       alert("There is No Order to Place Yet! \nPlease Make an Order first.");
       return;
     }
-    const carContent=cart.find(".cart-content");
-    carContent.html("");
+    const cartContent=cart.find(".cart-content");
+    cartContent.html("");
     alert("Your Order is Placed Successfully :)");
     itemsAdded=[];
     update();
   }
   function updateTotal(){
-    let carBoxes=$(".cart-box");
+    let cartBoxes=$(".cart-box");
     const totalElement=cart.find(".total-price");
     let total=0;
-    carBoxes.each(function(){
+    cartBoxes.each(function(){
       let priceElement=$(this).find(".cart-price");
       let price=parseFloat(priceElement.html().replace("$",""));
       let quantity=$(this).find(".cart-quantity").val();
+      total+=price*quantity;
+    })
       total+=total.toFixed(2);
       totalElement.html("$"+total);
-    })
+   
   }
   function CartBoxComponent(title, price, imgSrc){
     return `
@@ -116,25 +126,49 @@ $(document).ready(function(){
         <i class='bx bxs-trash-alt cart-remove'></i>
     </div>`;
   }
-  const toggle=$("#toggleDark");
-  const body=$("body");
-  toggle.on("click",function(){
-    $(this).toggleClass("bi-moon");
-    if($(this).toggleClass("bi-brightness-high-fill")){
-      body.css({
-        background:"white",
-        color:"black",
-        transition:"2s"
-      })
-    }else{
-      body.css({
-        background:"black",
-        color:"white",
-        transition:"2s"
-      })
-    }
-  })
+  //  const toggle=$("#toggleDark");
+  //  const body=$("body");
+  //  toggle.on("click",function(){
+  //    $(this).toggleClass("bi-moon");
+  //    if($(this).toggleClass("bi-brightness-high-fill")){
+  //      body.css({
+  //        "background":"white",
+  //       " color":"black",
+  //        "transition":"2s"
+  //      })
+  //    }else{
+  //      body.css({
+  //        "background":"black",
+  //       "color":"white",
+  //        "transition":"2s"
+  //      })
+  //    }
+  //  })
 
 
+  
+// const btn2_jQuery = $(`<button id="btn2" class="blue">Click ME 2 jQuery </button>`)
+
+// const div_1_jQuery = $('#toggleDark')
+
+// div_1_jQuery.append(btn2_jQuery)
+
+// btn2_jQuery.on('click',function(){
+//   // change body background to 'black' and text color to 'white'
+//   body_jQuery.css({
+//     'background-color':"black",
+//     'color':'white'
+//   })
+  
+// })
+
+// btn2_jQuery.on('mouseover',function(){
+// console.log("hover");
+// // change body background to 'black' and text color to 'white'
+// body_jQuery.css({
+//   'background-color':"white",
+//   'color':'black'
+// })
+// })
 
 

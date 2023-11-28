@@ -16,7 +16,7 @@
 </head>
 
 <body >
-    <!--  
+     
         <div class="container">
         <header>Sign Up</header>
 
@@ -116,7 +116,7 @@
                 </div>
             </form>
         </div>
-    </div>                                 -->
+    </div>                                 
    
     <!--                                         -->
    
@@ -127,11 +127,7 @@
         <div class="nav container">
             <a href="#" class="logo"><span>A-</span>Markiting</a>
             <button id="toggleButton">login</button>
-           <div id="cate" >
-            <a href="assets/img/product4.jpg" class="glass">glass</a>
-            <a href="assets/img/product5.jpg" href="assets/img/product6.jpg" class="glass">smart</a>
-            <a href="assets/img/product1.jpg" class="glass">sport</a>
-           </div>
+          
             
             
             
@@ -167,7 +163,7 @@
 
 
     <!-- SHOP SECTION  -->
-    <section class="shop container">
+    <section class="shop container" id="darkwhite">
         <h2 class="section-title">Shop Products</h2>
 
         <!-- CONTENT  -->
@@ -228,69 +224,42 @@
                 <span class="product-price">$110.5</span>
                 <i class='bx bx-shopping-bag add-cart'></i>
             </div>
-            <div class="product-box">
-                <img src="assets/img/product1.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product2.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product3.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product4.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product5.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product6.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product7.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
-            <div class="product-box">
-                <img src="assets/img/product8.jpg" alt="" class="product-img">
-                <h2 class="product-title">Apple Watch</h2>
-                <span class="product-price">$110.5</span>
-                <i class='bx bx-shopping-bag add-cart'></i>
-            </div>
+           
         </div>
     </section>
+    <button onclick="myFunction()" id="darkmmmmm">dark</button> 
     
       <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
-      <!-- <script>
+       <script>
+        
         const toggleButton = document.getElementById('toggleButton');
         const body = document.querySelector("section");
+        const div=document.querySelector(".container")
     
         toggleButton.addEventListener('click', function() {
-            body.style.display = (body.style.display === 'none') ? 'block' : 'none';
+            div.style.display = (div.style.display === 'none') ? 'block' : 'none';
+            div.style.display=(div.style.display==='none')?'none':'block;'
+            // body.style.display = (body.style.display === 'none') ? 'none' : 'block';
         });
-    </script> -->
+    </script> 
+    <script>
+        $(document).ready(function() {
+          const $darkModeToggle = $('#darkModeToggle');
+    
+          $darkModeToggle.change(function() {
+            $('body').toggleClass('dark-mode', $darkModeToggle.prop('checked'));
+          });
+        });
+      </script>
     
     <!-- link js  -->
     <script src="assets/js/main.js"></script>
+    <script>
+        function myFunction() {
+            let element = document.body;
+            element.classList.toggle("dark");
+        }
+    </script>
    
     
   
