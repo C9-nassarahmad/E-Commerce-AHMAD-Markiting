@@ -268,7 +268,7 @@ header{
     padding: 8px 15px 8px 15px;
     border-radius: 61px;
     cursor: pointer;
-    
+    transform: translate(-50%,-50%);
    
     
     background: white;
